@@ -1,1 +1,6 @@
 <h1>Slacks:</h1>
+<% @slacks.each do |slack| %>
+  <div class="slack-list-item">
+    Prod time:<%= slack.prod_time %> • Unprod time:<%= slack.unprod_time %> • Sleep time:<%= slack.prod_time %> • date:created<%= slack.created_at %>
+  </div>
+<% end %>

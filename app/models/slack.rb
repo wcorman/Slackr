@@ -1,5 +1,5 @@
 class Slack < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
 
   #
   # validates :prod_time, presence: true

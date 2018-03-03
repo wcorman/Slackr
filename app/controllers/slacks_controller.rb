@@ -7,6 +7,7 @@ class SlacksController < ApplicationController
     # For any action, Rails will by default render
     # a template named after the action, like below:
     # render :index
+    @slacks = Slack.order(created_at: :desc).take(7)
   end
 
 

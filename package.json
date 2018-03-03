@@ -1,5 +1,7 @@
 {
   "name": "slackr",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "highcharts": "^6.0.7"
+  }
 }
