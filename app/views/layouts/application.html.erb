@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to 'Slackr', :root %>
+      |
+      <%= link_to 'New Slack', '#' %>
+      |
+      <%= link_to 'Sign In', '#' %>
+      |
+      <%= link_to 'Sign Up', '#' %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

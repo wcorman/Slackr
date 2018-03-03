@@ -1,0 +1,17 @@
+/*
+  SCSS (SUPER CSS)...
+  SASS CSS or Syntatically Awesome Style Sheets CSS
+  It's a superset of CSS meaning that you do anything in
+  it that you can do with CSS, but it adds extra features.
+  https://sass-lang.com/
+  https://www.sassmeister.com/
+
+  👇 must be in comments of rails asset pipeline, Sprockets,
+    checks comments for these.
+
+    *= require chosen
+*/
+
+@import "font-awesome";
+@import "bootstrap";
+@import "main";
