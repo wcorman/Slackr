@@ -1,0 +1,33 @@
+body {
+  background-image: url("19.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+div {
+opacity: .95;
+}
+
+nav {
+  background-color: inherit;
+  opacity: .2;
+}
+
+#signup {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.label {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px #000000;
+
+}
+
+.form-control {
+  width:25%;
+  display: inline-block;
+  opacity: .7
+}

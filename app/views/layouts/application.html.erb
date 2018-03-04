@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <!-- <%= javascript_include_tag "https://www.google.com/jsapi" %> -->
+    <!-- <%= javascript_include_tag "/js/highcharts.js" %> -->
+
   </head>
 
   <body>
@@ -14,11 +17,39 @@
       |
       <%= link_to 'New Slack', '#' %>
       |
-      <%= link_to 'Sign In', '#' %>
+      <% if user_signed_in? %>
+        <span>Hello, <%= current_user.first_name %>!</span>
       |
-      <%= link_to 'Sign Up', '#' %>
+      <%= link_to 'Sign Out', session_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Sign In', new_session_path %>
+        |
+        <%= link_to 'Sign Up', new_user_path %>
+        |
+        <% end %>
     </nav>
+    <hr>
 
-    <%= yield %>
+    <div class="container-fluid">
+      <% if flash[:notice].present? %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= flash[:notice] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% elsif flash[:alert].present? %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= flash[:alert] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,47 @@
+<h1 style="color:white">Sign Up</h1>
+<div class="container" id="signup">
+  <% if @user.errors.any? %>
+    <p>
+      <%= @user.errors.full_messages.join(', ') %>
+    </p>
+  <% end %>
+
+
+  <%= form_for @user do |f| %>
+  <div class="form-group">
+    <div class="label">
+      <%= f.label :first_name %>
+    </div>
+      <%= f.text_field :first_name, class:"form-control" %>
+    </div>
+  <div class="form-group">
+    <div class="label">
+      <%= f.label :last_name %>
+    </div>
+    <%= f.text_field :last_name, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <div class="label">
+    <%= f.label :email %>
+  </div>
+  <div class="">
+  <%= f.email_field :email, class:"form-control" %>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="label">
+    <%= f.label :password %>
+  </div>
+    <%= f.password_field :password, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <div class="label">
+    <%= f.label :password_confirmation %>
+  </div>
+    <%= f.password_field :password_confirmation, class:"form-control" %>
+  </div>
+<div class="mt-4 ">
+  <%= f.submit class:"btn" %>
+</div>
+<% end %>
+</div>
