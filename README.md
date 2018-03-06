@@ -2,7 +2,11 @@
 
 <h3>Slackr is a way for you to keep track of your productivity (or lack thereof) with an emphasis on user experience and simplicity.</h3>
 
+<<<<<<< HEAD
 Main Features:
+=======
+Main Features: 
+>>>>>>> 55a0a2b5bb3463ebd3011089ba623637bac09a53
 
 * Ruby version: 2.5.0
 
