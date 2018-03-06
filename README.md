@@ -20,6 +20,8 @@ Main Features:
 
 * Deployment instructions
 
+<br>
+
 Upcoming Features:
 
 ☐ Integration with FitBit API (for sleep time)
