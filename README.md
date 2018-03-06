@@ -4,7 +4,7 @@
 
 Main Features: 
 
-* Ruby version
+* Ruby version: 2.5.0
 
 * System dependencies
 
