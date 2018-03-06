@@ -1,9 +1,8 @@
 # Slackr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h3>Slackr is a way for you to keep track of your productivity (or lack thereof) with an emphasis on user experience and simplicity.</h3>
 
-Things you may want to cover:
+Main Features: 
 
 * Ruby version
 
@@ -21,4 +20,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+Upcoming Features:
