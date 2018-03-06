@@ -1,12 +1,18 @@
+  <%= content_tag :div, class: "temp_information", data: {prod: @prod_avg, unprod: @unprod_avg, sleep: @sleep_avg} do %>
+<% end %>
+<%= :prod %>
 <script type="text/javascript">
-let prod_time = .6
-let unprod_time = .2
-let sleep_time = .3
+  let prod_avg = (($('.temp_information').data('prod'))/100)
+  let unprod_avg = (($('.temp_information').data('unprod'))/100)
+  let sleep_avg = (($('.temp_information').data('sleep'))/100)
+  let prod_time = prod_avg
+  let unprod_time = unprod_avg
+  let sleep_time = sleep_avg
 </script>
 
+<div class="" style="color:white"></div>
 
 <div class="chart_area">
-
 
   <div class="barcontain">
     <b>Productive Time</b>

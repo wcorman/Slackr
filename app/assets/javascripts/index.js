@@ -20,7 +20,7 @@ window.onload = function onLoad() {
     if (value === 0) {
       circle.setText('');
     } else {
-      circle.setText(value);
+      circle.setText(value + '%');
     }
   }
 
@@ -50,7 +50,7 @@ window.onload = function onLoad() {
     if (value === 0) {
       circle2.setText('');
     } else {
-      circle2.setText(value);
+      circle2.setText(value + '%');
     }
   }
 
@@ -80,12 +80,12 @@ window.onload = function onLoad() {
     if (value === 0) {
       circle2.setText('');
     } else {
-      circle2.setText(value);
+      circle2.setText(value + '%');
     }
   }
 
     });
 
     circle2.text.style.fontSize = '2rem';
-    circle2.animate(.3);
+    circle2.animate(sleep_time);
 };
