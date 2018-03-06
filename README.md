@@ -20,7 +20,7 @@ Main Features:
 
 * Deployment instructions
 
-<br>
+<hr>
 
 Upcoming Features:
 
