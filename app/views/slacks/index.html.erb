@@ -1,6 +1,27 @@
-<% @slacks.each do |slack| %>
-  <div class="slack-list-item">
-<%= slack.created_at.strftime("%B %d, %Y %a")  %>
-<%= (pie_chart [['productive time', slack.prod_time],['unproductive time', slack.unprod_time],['sleep time', slack.sleep_time]]) %>
+<script type="text/javascript">
+let prod_time = .6
+let unprod_time = .2
+let sleep_time = .3
+</script>
+
+
+<div class="chart_area">
+
+
+  <div class="barcontain">
+    <b>Productive Time</b>
+
+    <div class="progress" id='prod_time_chart'></div>
   </div>
-<% end %>
+
+  <div class="barcontain">
+    <b>Unproductive Time</b>
+    <div class="progress" id="unprod_time_chart"></div>
+  </div>
+
+  <div class="barcontain">
+    <b>Sleep Time</b>
+    <div class="progress" id="sleep_time_chart"></div>
+  </div>
+
+</div>

@@ -2,6 +2,8 @@
   "name": "slackr",
   "private": true,
   "dependencies": {
-    "highcharts": "^6.0.7"
+    "highcharts": "^6.0.7",
+    "progressbar.js": "^1.0.1",
+    "shifty": "^2.3.1"
   }
 }

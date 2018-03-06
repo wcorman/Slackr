@@ -11,10 +11,10 @@ opacity: .95;
 
 nav {
   background-color: inherit;
-  opacity: .2;
+  opacity: .6;
 }
 
-#signup {
+.form {
   margin-top: 0px;
   text-align: center;
 }
@@ -30,4 +30,12 @@ nav {
   width:25%;
   display: inline-block;
   opacity: .7
+}
+
+.chart_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }

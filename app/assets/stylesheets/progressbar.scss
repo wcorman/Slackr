@@ -1,0 +1,19 @@
+.progress {
+    height: 90%;
+    opacity: .9;
+    background-color: rgba(255, 255, 255, .0);
+    width:100%;
+}
+.progress > svg {
+    height: 100%;
+    display: block;
+    strokeWidth: 10;
+    trailWidth: 1;
+    easing: 'easeInOut';
+    duration: 500;
+}
+
+.barcontain {
+    height: 300px
+
+}
