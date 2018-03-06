@@ -21,7 +21,11 @@ Main Features:
 * Deployment instructions
 
 Upcoming Features:
+
 ☐ Integration with FitBit API (for sleep time)
+
 ☐ Facebook API login
+
 ☐
+
 ☐
