@@ -1,4 +1,5 @@
 class SlacksController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @slacks = Slack.order(created_at: :desc).take(7)
@@ -9,7 +10,31 @@ class SlacksController < ApplicationController
     end
   end
 
-def create
-end
+  def new
+    @slack = Slack.new
+  end
 
+  def create
+    @slack = Slack.new slack_params
+    @slack.user = @current_user
+    if @slack.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+
+  private
+
+  def authorize_user!
+    unless can?(:create, @slack)
+      flash[:alert] = "Access Denied!"
+      redirect_to slack_path(@slack)
+    end
+  end
+
+  def slack_params
+    params.require(:slack).permit(:prod_time, :unprod_time, :sleep_time)
+  end
 end

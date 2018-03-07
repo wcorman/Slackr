@@ -1,6 +1,5 @@
   <%= content_tag :div, class: "temp_information", data: {prod: @prod_avg, unprod: @unprod_avg, sleep: @sleep_avg} do %>
 <% end %>
-<%= :prod %>
 <script type="text/javascript">
   let prod_avg = (($('.temp_information').data('prod'))/100)
   let unprod_avg = (($('.temp_information').data('unprod'))/100)
@@ -10,8 +9,7 @@
   let sleep_time = sleep_avg
 </script>
 
-<div class="" style="color:white"></div>
-
+<% if user_signed_in? %>
 <div class="chart_area">
 
   <div class="barcontain">
@@ -31,3 +29,36 @@
   </div>
 
 </div>
+
+<div class="chart_area">
+
+<div id="happy_chart" style="height:180px; width:360px; margin-top:90px">
+  <div class="rainbow" style="position: absolute">
+  <%= image_tag(
+  "rainbow2.png",
+  class: "img-fluid",
+  id: "rainbow",
+  style: "height:200px;"
+  ) %>
+  </div>
+
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+$('#rainbow').loadgo({
+  'opacity':  1,
+  'image':    '<%= asset_path('rainbow2over.png') %>',
+  'direction': 'lr',
+  'bgcolor':    'rgba(255,255,255,0)'
+});
+$('#rainbow').loadgo('loop', 75);
+
+</script>
+
+<% else %>
+<h2 style="color:white">Sign in to see your progress!</h2>
+<% end %>

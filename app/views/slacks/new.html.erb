@@ -1,0 +1,30 @@
+<h2 style="color:white">How was your day?</h2>
+
+<div class="container-fluid form">
+
+<%= form_for @slack do |f| %>
+<div class="form-group">
+  <div class="label">
+    <%= f.label :prod_time %>
+  </div>
+    <%= f.number_field :prod_time, class:"form-control" %>
+  </div>
+<div class="form-group">
+  <div class="label">
+    <%= f.label :unprod_time %>
+  </div>
+  <%= f.number_field :unprod_time, class:"form-control" %>
+</div>
+<div class="form-group">
+  <div class="label">
+  <%= f.label :sleep_time %>
+</div>
+<div class="">
+<%= f.number_field :sleep_time, class:"form-control" %>
+</div>
+<div class="mt-4 ">
+  <%= f.submit class:"btn btn-outline-light" %>
+</div>
+<% end %>
+
+</div>
