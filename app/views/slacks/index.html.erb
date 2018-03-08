@@ -32,13 +32,13 @@
 
 <div class="chart_area">
 
-<div id="happy_chart" style="height:180px; width:360px; margin-top:90px">
+<div id="happy_chart" style="height:310px; width:620px; margin-top:90px">
   <div class="rainbow" style="position: absolute">
   <%= image_tag(
-  "rainbow2.png",
+  "color1.png",
   class: "img-fluid",
   id: "rainbow",
-  style: "height:200px;"
+  style: "height:350px;"
   ) %>
   </div>
 
@@ -51,11 +51,13 @@
 
 $('#rainbow').loadgo({
   'opacity':  1,
-  'image':    '<%= asset_path('rainbow2over.png') %>',
+  'image':    '<%= asset_path('grey1.png') %>',
   'direction': 'lr',
   'bgcolor':    'rgba(255,255,255,0)'
 });
-$('#rainbow').loadgo('loop', 75);
+// $('#rainbow').loadgo('loop', 75);
+$('#rainbow').loadgo('setprogress', (42));
+$('.timer').countTo();
 
 </script>
 
