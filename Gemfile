@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'chosen-rails'
 gem "font-awesome-rails"
 gem 'chartkick'
+gem 'countupjs-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -7,6 +7,7 @@ class SlacksController < ApplicationController
       @prod_avg = Slack.where(user: current_user.id).average(:prod_time)
       @unprod_avg = Slack.where(user: current_user.id).average(:unprod_time)
       @sleep_avg = Slack.where(user: current_user.id).average(:sleep_time)
+      @happy_avg = Slack.where(user: current_user.id).average(:happy)
     end
   end
 
@@ -35,6 +36,6 @@ class SlacksController < ApplicationController
   end
 
   def slack_params
-    params.require(:slack).permit(:prod_time, :unprod_time, :sleep_time)
+    params.require(:slack).permit(:prod_time, :unprod_time, :sleep_time, :happy)
   end
 end

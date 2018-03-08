@@ -39,9 +39,10 @@ users = User.all
   created_at = Faker::Date.between(365.days.ago, Date.today)
 
   Slack.create(
-    prod_time: rand(20..40),
+    prod_time: rand(60..100),
     unprod_time: rand(10..40),
     sleep_time: rand(20..35),
+    happy: rand(65..100),
     user: users.sample,
     created_at: created_at
   )

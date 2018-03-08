@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "highcharts": "^6.0.7",
+    "jquery-easing": "0.0.1",
     "progressbar.js": "^1.0.1",
     "shifty": "^2.3.1"
   }

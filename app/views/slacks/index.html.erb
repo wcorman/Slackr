@@ -1,4 +1,4 @@
-  <%= content_tag :div, class: "temp_information", data: {prod: @prod_avg, unprod: @unprod_avg, sleep: @sleep_avg} do %>
+<%= content_tag :div, class: "temp_information", data: {prod: @prod_avg, unprod: @unprod_avg, sleep: @sleep_avg, happy: @happy_avg, floored_number: @floored_number} do %>
 <% end %>
 <script type="text/javascript">
   let prod_avg = (($('.temp_information').data('prod'))/100)
@@ -7,9 +7,28 @@
   let prod_time = prod_avg
   let unprod_time = unprod_avg
   let sleep_time = sleep_avg
+  let happy_avg = (($('.temp_information').data('happy')))
+  let happycount = happy_avg
 </script>
 
+
 <% if user_signed_in? %>
+
+<p>Happy level: <span id="fun-level" style="font-size: 0px; position: absolute">0 %</span> </p>
+
+<div class="chart_area">
+  <div id="happy_chart" style="height:310px; width:620px; margin-bottom:100px">
+    <div class="rainbow" style="position: absolute">
+      <%= image_tag(
+      "color1.png",
+      class: "img-fluid",
+      id: "rainbow",
+      style: "height:350px;"
+      ) %>
+    </div>
+  </div>
+</div>
+
 <div class="chart_area">
 
   <div class="barcontain">
@@ -30,20 +49,7 @@
 
 </div>
 
-<div class="chart_area">
 
-<div id="happy_chart" style="height:310px; width:620px; margin-top:90px">
-  <div class="rainbow" style="position: absolute">
-  <%= image_tag(
-  "color1.png",
-  class: "img-fluid",
-  id: "rainbow",
-  style: "height:350px;"
-  ) %>
-  </div>
-
-</div>
-</div>
 
 
 
@@ -56,8 +62,7 @@ $('#rainbow').loadgo({
   'bgcolor':    'rgba(255,255,255,0)'
 });
 // $('#rainbow').loadgo('loop', 75);
-$('#rainbow').loadgo('setprogress', (42));
-$('.timer').countTo();
+$('#rainbow').loadgo('setprogress', (happycount));
 
 </script>
 

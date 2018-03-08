@@ -119,4 +119,26 @@ window.onload = function onLoad() {
   //
   //   circle2.text.style.fontSize = '2rem';
   //   circle2.animate(1);
+
+
+  // animateNumber accepts same arguments, as animate does
+  // it adds only 'number' and 'numberStep' params
+  $('#fun-level').animateNumber(
+    {
+      number: happycount,
+      color: 'green', // require jquery.color
+      'font-size': '50px',
+
+      easing: 'easeOutQuad', // require jquery.easing
+
+      // optional custom step function
+      // using here to keep '%' sign after number
+      numberStep: function(now, tween) {
+        var floored_number = Math.floor(now),
+            target = $(tween.elem);
+        target.text(floored_number + ' %');
+      }
+    },
+    2100
+  );
 };
