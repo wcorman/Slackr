@@ -20,7 +20,7 @@ super_user = User.create(
   is_admin: true
 )
 
-12.times.each do
+10.times.each do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
 
@@ -35,7 +35,7 @@ end
 users = User.all
 
 
-50.times.each do
+75.times.each do
   created_at = Faker::Date.between(365.days.ago, Date.today)
 
   Slack.create(

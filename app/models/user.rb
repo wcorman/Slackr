@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-
   has_many :slacks, dependent: :destroy
+
+  before_create :generate_api_key
 
   has_secure_password
 
@@ -18,5 +19,13 @@ class User < ApplicationRecord
 
     def full_name
       "#{first_name} #{last_name}".strip
+    end
+
+  private
+    def generate_api_key
+      loop do
+        self.api_key = SecureRandom.hex(32)
+        break unless User.exists?(api_key: api_key)
+      end
     end
 end

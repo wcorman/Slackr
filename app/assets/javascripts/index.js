@@ -1,4 +1,5 @@
 window.onload = function onLoad() {
+
     var circle = new ProgressBar.Circle('#prod_time_chart', {
         color: 'ghostwhite',
         duration: 2700,
@@ -129,7 +130,7 @@ window.onload = function onLoad() {
       color: 'green', // require jquery.color
       'font-size': '50px',
 
-      easing: 'easeOutQuad', // require jquery.easing
+      easing: 'easeOutBounce', // require jquery.easing
 
       // optional custom step function
       // using here to keep '%' sign after number
@@ -139,6 +140,6 @@ window.onload = function onLoad() {
         target.text(floored_number + ' %');
       }
     },
-    2100
+    3000
   );
 };

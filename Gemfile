@@ -36,6 +36,8 @@ gem 'chosen-rails'
 gem "font-awesome-rails"
 gem 'chartkick'
 gem 'countupjs-rails'
+gem 'active_model_serializers'
+gem 'react_on_rails', '~> 10.1', '>= 10.1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
