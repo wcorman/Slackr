@@ -1,7 +1,7 @@
 window.onload = function onLoad() {
 
     var circle = new ProgressBar.Circle('#prod_time_chart', {
-        color: 'ghostwhite',
+        color: 'black',
         duration: 2700,
         easing: 'easeInOut',
         strokeWidth: 8,
@@ -31,7 +31,7 @@ window.onload = function onLoad() {
     circle.animate(prod_time);
 
     var circle2 = new ProgressBar.Circle('#unprod_time_chart', {
-        color: 'ghostwhite',
+        color: 'black',
         duration: 2700,
         easing: 'easeInOut',
         strokeWidth: 8,
@@ -61,7 +61,7 @@ window.onload = function onLoad() {
     circle2.animate(unprod_time);
 
     var circle2 = new ProgressBar.Circle('#sleep_time_chart', {
-        color: 'ghostwhite',
+        color: 'black',
         duration: 2700,
         easing: 'easeInOut',
         strokeWidth: 8,

@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find params[:id]
+    @slacks = Slack.order(created_at: :desc)
+  end
+
 
   private
 

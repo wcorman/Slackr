@@ -1,0 +1,10 @@
+<h1><%= @user.first_name %></h1>
+
+<h3>
+<% @slacks.each do |slack| %>
+  <div class="slack-list-item">
+    <%= slack.unprod_time %>
+  </div>
+  <hr>
+<% end %>
+</h3>

@@ -1,8 +1,8 @@
-class Api::V1::UsersController < Api::ApplicationController
+class Api::V1::UsersController < ApplicationController
 
-
-  def index
-    @users = User.order(created_at: :desc)
-    render json: @users
+  def show
+    @user = User.find params[:id]
+    @slacks = Slack.where(user: current_user.id)
   end
+
 end

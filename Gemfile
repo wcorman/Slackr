@@ -36,8 +36,10 @@ gem 'chosen-rails'
 gem "font-awesome-rails"
 gem 'chartkick'
 gem 'countupjs-rails'
+gem 'jwt'
+gem 'rack-cors'
 gem 'active_model_serializers'
-gem 'react_on_rails', '~> 10.1', '>= 10.1.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -62,3 +64,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mini_racer', platforms: :ruby
