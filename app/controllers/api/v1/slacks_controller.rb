@@ -37,10 +37,11 @@ class Api::V1::SlacksController < Api::ApplicationController
 
     render json: slacks
   end
-  def trends
-    slacks = Slack.where(user: current_user).order(created_at: :desc)
 
-    render json: slacks
+  def trends
+    trends = Slack.where(user: current_user).order(created_at: :desc)
+
+    render json: trends
   end
 
   def averages
@@ -54,6 +55,33 @@ class Api::V1::SlacksController < Api::ApplicationController
 
     render json: averages
   end
+
+  def dates
+    slacks = Slack.where(user: current_user).order(created_at: :desc).select(:created_at, :id)
+
+    dates = {
+      created_at: slacks,
+
+    }
+
+    Rails.logger.info ">>>>>>>>>>>>>"
+    Rails.logger.info current_user
+    Rails.logger.info ">>>>>>>>>>>>>"
+    Rails.logger.info slacks.inspect
+    Rails.logger.info ">>>>>>>>>>>>>"
+    Rails.logger.info slacks.to_json
+    Rails.logger.info ">>>>>>>>>>>>>"
+
+    render json: dates
+
+  end
+
+  # Slack.find_by_sql("select to_char(created_at,'Mon') as mon,
+  #        extract(year from created_at) as yyyy,
+  #        count(\"id\") as \"Count\"
+  # from slacks
+  # group by 1,2")
+
 
   def create
     slack = Slack.new slack_params

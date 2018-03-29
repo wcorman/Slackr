@@ -5,6 +5,9 @@ class Api::ApplicationController < ApplicationController
     end
     helper_method :is_user_signed?
 
+
+    private
+
     def current_user
       token = request.headers["AUTHORIZATION"]
       # The decoded token will be array containing
@@ -27,7 +30,7 @@ class Api::ApplicationController < ApplicationController
 
     helper_method :current_user
 
-    private
+
     def authenticate_user!
       head :unauthorized unless current_user.present?
     end

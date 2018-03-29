@@ -19,12 +19,7 @@
 <div class="chart_area">
   <div id="happy_chart" style="height:310px; width:620px; margin-bottom:100px">
     <div class="rainbow" style="position: absolute">
-      <%= image_tag(
-      "color1.png",
-      class: "img-fluid",
-      id: "rainbow",
-      style: "height:350px;"
-      ) %>
+
     </div>
   </div>
 </div>
@@ -55,13 +50,7 @@
 
 <script type="text/javascript">
 
-$('#rainbow').loadgo({
-  'opacity':  1,
-  'image':    '<%= asset_path('grey1.png') %>',
-  'direction': 'lr',
-  'bgcolor':    'rgba(255,255,255,0)'
-});
-// $('#rainbow').loadgo('loop', 75);
+
 $('#rainbow').loadgo('setprogress', (happycount));
 
 </script>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :slacks, only: [:index, :create] do
         get 'averages', on: :collection
         get 'trends', on: :collection
+        get 'dates', on: :collection
       end
       resources :tokens, only: [:create]
     end
