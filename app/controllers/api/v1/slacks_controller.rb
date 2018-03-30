@@ -39,7 +39,7 @@ class Api::V1::SlacksController < Api::ApplicationController
   end
 
   def trends
-    trends = Slack.where(user: current_user).order(created_at: :desc)
+    trends = Slack.where(user: current_user).order(created_at: :asc)
 
     render json: trends
   end
@@ -57,7 +57,7 @@ class Api::V1::SlacksController < Api::ApplicationController
   end
 
   def dates
-    slacks = Slack.where(user: current_user).order(created_at: :desc).select(:created_at, :id)
+    slacks = Slack.where(user: current_user).order(created_at: :asc).select(:created_at, :id)
 
     dates = {
       created_at: slacks,
@@ -87,7 +87,7 @@ class Api::V1::SlacksController < Api::ApplicationController
     slack = Slack.new slack_params
     slack.user = current_user
     if slack.save
-      render json: slacks
+      render json: slack
     else
       head :conflict
     end
