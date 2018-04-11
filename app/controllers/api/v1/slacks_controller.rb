@@ -1,5 +1,6 @@
 class Api::V1::SlacksController < Api::ApplicationController
   # before_action :authenticate_user!, only: [:create]
+# before_action :check_timestamp, only: [:create]
 
   def index
     # slacks = Slack.where(user: current_user)
@@ -92,6 +93,17 @@ class Api::V1::SlacksController < Api::ApplicationController
       head :conflict
     end
   end
+  #
+  # def check_timestamp
+  #   if Slack.where(user: current_user.id).last.created_at < 20.hour.ago
+  #     puts 'APPROVED'
+  #    else
+  #      puts 'DENIED'
+  #      head :not_found
+  #    end
+  # end
+
+
 
   private
 

@@ -8,7 +8,7 @@ class SlacksController < ApplicationController
       @unprod_avg = Slack.where(user: current_user.id).average(:unprod_time)
       @sleep_avg = Slack.where(user: current_user.id).average(:sleep_time)
       @happy_avg = Slack.where(user: current_user.id).average(:happy)
-
+      @last_date = Slack.where(user: current_user.id).last.created_at
     end
     respond_to do |format|
       format.html { render }
@@ -21,6 +21,8 @@ class SlacksController < ApplicationController
   end
 
   def create
+    @slack = Slack.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc).first_or_create! slack_params
+
     @slack = Slack.new slack_params
     @slack.user = @current_user
     if @slack.save

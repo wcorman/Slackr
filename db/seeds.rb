@@ -35,22 +35,22 @@ end
 users = User.all
 
 
-40.times.each do
-  created_at = Faker::Date.between(365.days.ago, Date.today)
-
-  Slack.create(
-    prod_time: rand(60..100),
-    unprod_time: rand(10..40),
-    sleep_time: rand(20..35),
-    happy: rand(65..100),
-    user: users.sample,
-    created_at: created_at
-  )
-end
+# 2.times.each do
+#   created_at = Faker::Date.between(365.days.ago, Date.today)
+#
+#   Slack.create(
+#     prod_time: rand(60..100),
+#     unprod_time: rand(10..40),
+#     sleep_time: rand(20..35),
+#     happy: rand(65..100),
+#     user: users.sample,
+#     created_at: created_at
+#   )
+# end
 
 slacks = Slack.all
 
 
 puts Cowsay.say "Created #{users.count} users", :tux
-puts Cowsay.say "Created #{slacks.count} Slacks", :frogs
+# puts Cowsay.say "Created #{slacks.count} Slacks", :frogs
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'!"

@@ -20,4 +20,5 @@ class Slack < ApplicationRecord
   #
 
 
+
 end

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
-      resources :users
+      resources :tokens, only: [:create]
+      resources :users,  only: [:create]
       resources :slacks, only: [:index, :create] do
         get 'averages', on: :collection
         get 'trends', on: :collection
-        get 'dates', on: :collection
       end
       resources :tokens, only: [:create]
     end

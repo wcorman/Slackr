@@ -1,12 +1,10 @@
 class Api::ApplicationController < ApplicationController
   skip_before_action :verify_authenticity_token
+  rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
     def is_user_signed?
     end
     helper_method :is_user_signed?
-
-
-    private
 
     def current_user
       token = request.headers["AUTHORIZATION"]
@@ -30,8 +28,39 @@ class Api::ApplicationController < ApplicationController
 
     helper_method :current_user
 
+    private
 
     def authenticate_user!
       head :unauthorized unless current_user.present?
     end
+
+    def encode_token(payload = {}, exp = 24.hours.from_now)
+      payload[:exp] = exp.to_i # important!!! otherwise token never expires!
+      JWT.encode(
+        payload,
+        Rails.application.secrets.secret_key_base
+      )
+    end
+
+    protected
+
+    def record_invalid(error)
+      record = error.record
+      errors = record.errors.map do |field, message|
+        {
+          type: error.class.to_s,
+          record_type: record.class.to_s,
+          field: field,
+          message: message
+        }
+      end
+
+      render(
+        json: {
+          errors: errors
+        },
+        status: :unprocessable_entity # alias for status code 422
+      )
+    end
+
   end
