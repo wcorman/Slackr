@@ -1,35 +1,31 @@
 # Slackr
 
-<h3>Slackr is a way for you to keep track of your productivity (or lack thereof) with an emphasis on user experience and simplicity.</h3>
+<h3>Slackr is a tool to help you keep track of your daily habits and gain a better understanding of how they correlate with your mood.</h3>
 
 Main Features:
 =======
-Main Features:
+* Allows Users to make 1 entry per day in regards to how their day went.
 
-* Ruby version: 2.5.0
+* As they make more entries, they can view a graph, showing a trend of their daily habits and mood.
 
-* System dependencies
 
-* Configuration
+Technologies Used:
+=======
+* React.js
+* Chart.js
+* Ant Design
+* Material-UI
+* react-rangeslider
+* rc-progress
+* reactstrap
+* PostGreSQL database
+* Ruby on Rails backend
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 <hr>
 
 Upcoming Features:
 
-☐ Integration with FitBit API (for sleep time)
+☐ Integration with FitBit API (for sleep quality)
 
 ☐ Facebook API login
-
-☐
-
-☐
