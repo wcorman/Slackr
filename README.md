@@ -2,6 +2,8 @@
 
 <h3>Slackr is a tool to help you keep track of your daily habits and gain a better understanding of how they correlate with your mood.</h3>
 
+* Can be seen here: http://slackr.ca.s3-website-us-west-2.amazonaws.com/
+
 Main Features:
 =======
 * Allows Users to make 1 entry per day in regards to how their day went.
